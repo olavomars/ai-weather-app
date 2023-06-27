@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Country, City } from 'country-state-city';
 import Select from 'react-select';
