@@ -43,11 +43,11 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
           </div>
         </div>
 
-        <div>
+        <div className='m2 mb-10'>
           <CalloutCard message='this is where GPT summary will go!' />
         </div>
 
-        <div>
+        <div className='grid grid-cols-1 xl:grid-cols-2 gap-5 m-2'>
           <StatCard
             title='Maximum Temperature'
             metric={`${results.daily.temperature_2m_max[0].toFixed(1)}º`}
@@ -72,6 +72,26 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
               />
             )}
           </div>
+          <div className='flex space-x-3'>
+            <StatCard
+              title='Wind Speed'
+              metric={`${results.current_weather.windspeed.toFixed(1)}ms`}
+              color='cyan'
+            />
+            <StatCard
+              title='Wind Direction'
+              metric={`${results.current_weather.winddirection.toFixed(1)}º`}
+              color='violet'
+            />
+          </div>
+        </div>
+
+        <hr className='mb-5' />
+
+        <div className='space-y-3'>
+          {/* {<TempChart />} */}
+          {/* {<Humidity />} */}
+          {/* {<TempChart />} */}
         </div>
       </div>
     </div>
